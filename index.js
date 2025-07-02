@@ -122,4 +122,10 @@ client.on('messageCreate', async (message) => {
     }
 });
 
+if (!process.env.DISCORD_TOKEN) {
+    console.error("❌ DISCORD_TOKEN is not set");
+    process.exit(1);
+} else {
+    console.log("✅ DISCORD_TOKEN loaded. Length:", process.env.DISCORD_TOKEN.length);
+}
 client.login(process.env.DISCORD_TOKEN);
