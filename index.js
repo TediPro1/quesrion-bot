@@ -43,8 +43,9 @@ async function sendQuestionAtNoon() {
     }, millisTillSend > 0 ? millisTillSend : 0);
 }
 
-client.on('ready', () => {
+client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}`);
+    sendQuestionAtNoon();
 });
 
 client.on('messageCreate', async (message) => {
