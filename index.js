@@ -46,7 +46,7 @@ async function sendQuestionAtNoon() {
 }
 
 client.on('ready', () => {
-    console.log('bot is ready');
+    console.log(`Logged in as ${client.user.tag}`);
 });
 
 client.on('messageCreate', async (message) => {
@@ -124,4 +124,4 @@ client.on('messageCreate', async (message) => {
     }
 });
 
-client.login(secrets.DISCORD_TOKEN);
+client.login(process.env.DISCORD_TOKEN);
